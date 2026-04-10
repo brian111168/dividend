@@ -12,7 +12,7 @@ import webbrowser
 import os
 
 # ── PNG：用 playwright 或 weasyprint headless 渲染 ──────────────────
-from playwright.sync_api import sync_playwright
+
 
 import subprocess
 
