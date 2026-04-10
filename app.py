@@ -167,7 +167,7 @@ if st.session_state.report_html:
             with st.spinner("渲染中..."):
                 try:
                     png_bytes = export_png(html_content)
-                    st.download_button("⬇ 下載 PNG", data=png_bytes, file_name="股利報表.png", mime="image/png", use_container_width=True)
+                    # st.download_button("⬇ 下載 PNG", data=png_bytes, file_name="股利報表.png", mime="image/png", use_container_width=True)
                 except Exception as e:
                     st.error(f"PNG 匯出失敗: {e}")
 
@@ -176,7 +176,7 @@ if st.session_state.report_html:
             with st.spinner("產生 PDF..."):
                 try:
                     pdf_bytes = export_pdf(html_content, password=pdf_password)
-                    st.download_button("⬇ 下載 PDF", data=pdf_bytes, file_name="股利報表.pdf", mime="application/pdf", use_container_width=True)
+                    # st.download_button("⬇ 下載 PDF", data=pdf_bytes, file_name="股利報表.pdf", mime="application/pdf", use_container_width=True)
                 except Exception as e:
                     st.error(f"PDF 匯出失敗: {e}")
 

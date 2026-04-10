@@ -36,10 +36,23 @@ def html_to_pdf_bytes(html: str, filename="report.html") -> bytes:
 
 
 
-def export_png(html: str) -> bytes:
-    return html_to_png_bytes(html)
+def export_png(html: str,filename="report.html") -> bytes:
+    path = os.path.abspath(filename)
+
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(html)
+
+    # Chrome print mode
+    webbrowser.open("file://" + path + "#print")
+    return
 
 
-def export_pdf(html: str, password: str = "") -> bytes:
-    pdf_bytes = html_to_pdf_bytes(html)
+def export_pdf(html: str, filename="report.html") -> bytes:
+    path = os.path.abspath(filename)
+
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(html)
+
+    # Chrome print mode
+    webbrowser.open("file://" + path + "#print")
     return 
