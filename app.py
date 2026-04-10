@@ -161,7 +161,14 @@ if st.session_state.report_html:
     # ── 匯出按鈕區 ──
     st.markdown("### 📥 匯出報表")
     col_png, col_pdf, col_csv = st.columns(3)
+    html_content = st.session_state.report_html
 
+    st.download_button(
+        label="下載 HTML 報表",
+        data=html_content,
+        file_name="dividend_report.html",
+        mime="text/html",
+    )
     with col_png:
         if st.button("🖼️ 匯出 PNG 圖片", use_container_width=True):
             with st.spinner("渲染中..."):
