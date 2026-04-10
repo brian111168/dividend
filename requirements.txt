@@ -1,0 +1,9 @@
+streamlit>=1.35.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.1.0
+pandas>=2.2.0
+pikepdf>=8.15.0
+kaleido>=0.2.1
+Pillow>=10.3.0
+plotly>=5.22.0
