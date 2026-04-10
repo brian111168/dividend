@@ -8,6 +8,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import pandas as pd
+import certifi
 
 HEADERS = {
     "User-Agent": (
@@ -78,7 +79,7 @@ def scrape_moneydj(code: str) -> pd.DataFrame:
     url = _moneydj_url(code)
 
     try:
-        resp = SESSION.get(url, timeout=15)
+        resp = SESSION.get(url,  verify=certifi.where(),timeout=15)
         resp.encoding = "utf-8"
         resp.raise_for_status()
     except requests.RequestException as e:
